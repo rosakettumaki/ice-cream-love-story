@@ -1,8 +1,9 @@
-Hey Soma and Jessie!!
+Hey Soma and Jessie,
 
-I'm so sorry I'm again doing this, but I just can't stay up all night just to write this read me, so I'll do it tomorrow. This time, I won't forget to get back on to this on time.
+I'm so sorry to do this again, but I just can't stay up all night to finish the read me, so I'll get it done tomorrow. This time, I promise I won't forget to circle back to it on time.
 
-I'll do the better reflection to an actual read me, but I REALLY wanted this to be nice, but then I faced too many problems on the way, and this is where I got before deadline.
+I'll write a proper reflection in the actual readme, but I really wanted this project to turn out great. Unfortunately, but then I ran into way too many problems along the way, and this is as far as I got before the deadline.
 
-But with this one, I really want to keep fixing this more so it could be an actual portfolio piece. However, even my ai2htlm is still not working probably and there is such a many issues in so many things, I did learn a lot!!
-So all the ideas how to improve this, are more than welcome! And on Saturday 17th of May, I'll do better version of this read me as well, actually I hope you'll nver end up reading this version.
+That said, I definitely want to keep working on this and turn it into a proper portfolio piece. Right now, even my ai2html isn't working properly, and there are just so many issues… but I did learn a lot!
+
+So any and all ideas for improvement are more than welcome! I’ll upload a better version of this on Saturday, May 17. Ideally, I hope you never have to read this version. :DD
