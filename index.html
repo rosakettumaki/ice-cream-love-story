@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ICE CREAM STORY</title>
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alumni Sans Pinstripe:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-size: 30px;
+      font-family: 'Alumni Sans Pinstripe';
+      text-rendering: optimizeLegibility;
+    }
+
+    .content {
+      max-width: 640px;
+      margin: auto;
+    }
+
+.header {
+  background-image: url("pexels-cheasomben-1294943.jpg");
+  margin:0 auto;
+  padding: 2em 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Läpikuultava taustaefekti */
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.50); /* valkoinen 50 % läpinäkyvyydellä */
+  z-index: 1;
+}
+
+/* Tekstin kerros päälle */
+.header * {
+  position: relative;
+  z-index: 2;
+}
+
+.info-box {
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  padding: 1em;
+  margin-top: 2em;
+  max-width: 600px;
+  border-radius: 8px;
+  font-family: 'Alumni Sans Pinstripe';
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.vertical-video {
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* voit säätää leveyttä esim. max-width: 480px */
+  margin: 0 auto;
+  padding-top: 70%; /* 9:16 kuvasuhde (16/9 * 100%) */
+  overflow: hidden;
+}
+
+.vertical-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+    a {
+      color: hsl(304, 95%, 64%);
+    }
+
+    .footer {
+      background: #f4f4f4;
+      text-align: center;
+      font-size: 0.8em;
+      margin-top: 4em;
+      padding: 4em 0;
+    }
+
+    figure {
+      margin: 0;
+      padding-bottom: 1.2em;
+    }
+
+    figcaption {
+      font-size: 0.8em;
+      text-align: center;
+      margin-top: 0.5em;
+      color: #666;
+    }
+
+    h1 {
+      font-family: 'Alumni Sans Pinstripe';
+      font-weight: bold;
+      font-size: 3em;
+      line-height: 1.1;
+    }
+
+    .subhead {
+      font-family: 'Alumni Sans Pinstripe';
+    }
+
+    iframe,
+    img,
+    video {
+      max-width: 100%;
+    }
+
+    p {
+      line-height: 1.6;
+      margin: 0;
+      padding-bottom: 1.2em;
+    }
+
+    ul {
+      margin: 0;
+      padding-bottom: 1em;
+      line-height: 1.6;
+    }
+
+    iframe {
+      padding-bottom: 1.2em;
+    }
+
+    .full-width figure {
+      text-align: center;
+    }
+
+    code {
+      font-family: 'Alumni Sans Pinstripe';
+      background: #fff880;
+    }
+
+    /* margin on mobile */
+    @media (max-width: 640px) {
+      body {
+        font-size: 18px;
+      }
+
+      .content {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+      }
+
+
+    }
+  </style>
+  <link href="scrolly-styles.css" rel="stylesheet">
+  <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+</head>
+
+<body>
+  <div class="content">
+    <div class="header">
+      <h1>The Great American </h1>
+      <h1>Ice Cream Love Story</h1>
+      <p class="subhead"> In 2024, ice cream makers in the United States produced 1.31 billion gallons of ice cream. If all that ice cream were shaped into a cone with a base as wide as it is tall, it would form a mountain roughly 552 feet high. A full-on ice creamberg. </p>
+    </div>
+    <div class="byline">
+      <p>By <a href="https://rosakettumaki.github.io/portfolio-website/">Rosa Kettumäki</a></p>
+
+    </div>
+
+    <p>The day outside is rainy, but the atmosphere inside the Frozen Love ice cream shop in Harlem is joyful.</p>
+
+      <p>"I feel like people are against having a sweet treat for themselves nowadays. So that makes me really happy that people are eating that much ice cream every single year," Amethyst Martinez says after hearing that the average American consumes approximately four gallons of ice cream per year.</p>
+
+      <p>According to Statista, global revenue in the ice cream market is projected to reach US$109.24 billion in 2025. And the United States is a major player in this game, only the New Zealanders eat more ice cream per person than Americans. A market this big is closely studied. The International Dairy Foods Association (IDFA), in particular, has invested heavily in understanding the roots of America’s love affair with ice cream.</p>
+        
+        <p>Take, for example, the fundamental question: cup or cone? The IDFA has a research-based answer. Waffle cones win out over sugar cones by 29% to 12%, while 27% of consumers prefer to eat their ice cream out of a bowl.</p>
+        
+        <p>And once you’ve picked your base, it’s time to choose a flavor. As boring as it might sound, vanilla still holds the crown as the most beloved ice cream flavor.</p>
+
+
+      <iframe title=" America's Favorite Ice Cream Flavors" aria-label="Table" id="datawrapper-chart-t7RMl" src="https://datawrapper.dwcdn.net/t7RMl/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="400" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
+      </script>
+
+       <p>Amethyst Martinez's favorite flavor is not on the top 10 list.</p>
+
+      <div class="vertical-video">
+        <iframe 
+          src="https://www.youtube.com/embed/teKSQ2QO4ZM" 
+          title="Vertical YouTube video" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+
+	  </div>
+
+  <div>
+
+		<p></p>
+		<p></p>
+		<p></p>
+
+		</div>
+   
+  </div>
+  <section id="scrolly-images" class="scrolly-container">
+    <div class="sticky-thing">
+      <img src="frozen-love.jpg">
+    </div>
+    <div class="steps-container">
+      <div class="step" id="step1">
+        <div>
+          <p>Frozen Love has been in Harlem for just three months.</p>
+        </div>
+      </div>
+      <div class="step" id="step2">
+        <p>Its specialty is the ice cream containers that spin and keep the ice cream perfectly soft at all times.</p>
+      </div>
+      <div class="step" id="step4">
+        <p>They also have a wide variety of toppings available.</p>
+      </div>
+      <div class="step" id="step5">
+        <p>Including some salty options as well.</p>
+      </div>
+    </div>
+  </section>
+  <div class="content">
+
+	<p>Compared to many other ice cream cultures around the world, toppings are a big deal in the U.S.</p>
+	<p>When people were asked about their favorites, responses spanned 21 distinct topping categories—before the rarer ones were grouped together under “other.”</p>
+	<p>Here are the top 10.</p>
+
+<!-- Generated by ai2html v0.121.1 - 2025-05-16 18:16 -->
+<!-- ai file: template.ai -->
+<style media="screen,print">
+	#g-template-box ,
+	#g-template-box .g-artboard {
+		margin:0 auto;
+	}
+	#g-template-box p {
+		margin:0;
+	}
+	#g-template-box .g-aiAbs {
+		position:absolute;
+	}
+	#g-template-box .g-aiImg {
+		position:absolute;
+		top:0;
+		display:block;
+		width:100% !important;
+	}
+	#g-template-box .g-aiSymbol {
+		position: absolute;
+		box-sizing: border-box;
+	}
+	#g-template-box .g-aiPointText p { white-space: nowrap; }
+	#g-template-full {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-template-full p {
+		font-weight:regular;
+		line-height:14px;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:12px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		height:auto;
+		position:static;
+	}
+	#g-template-full .g-pstyle0 {
+		font-weight:500;
+		line-height:29px;
+		height:29px;
+		font-size:24px;
+	}
+	#g-template-full .g-pstyle1 {
+		font-weight:500;
+		line-height:29px;
+		font-size:24px;
+	}
+	#g-template-full .g-pstyle2 {
+		font-weight:500;
+		line-height:35px;
+		height:35px;
+		font-size:16px;
+	}
+	#g-template-full .g-pstyle3 {
+		font-weight:500;
+		line-height:25px;
+		height:25px;
+		font-size:16px;
+	}
+	#g-template-full .g-pstyle4 {
+		font-weight:500;
+		line-height:22px;
+		height:22px;
+		font-size:16px;
+	}
+	#g-template-full .g-pstyle5 {
+		font-weight:500;
+		line-height:19px;
+		height:19px;
+		font-size:16px;
+	}
+	#g-template-full .g-pstyle6 {
+		font-weight:500;
+		line-height:18px;
+		height:18px;
+		font-size:15px;
+	}
+	#g-template-full .g-pstyle7 {
+		font-weight:500;
+		line-height:27px;
+		height:27px;
+		font-size:22px;
+	}
+	#g-template-full .g-pstyle8 {
+		font-weight:500;
+		line-height:23px;
+		height:23px;
+		font-size:16px;
+	}
+	#g-template-full .g-pstyle9 {
+		font-weight:500;
+	}
+	#g-template-medium {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-template-medium p {
+		font-weight:regular;
+		line-height:19px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:16px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		position:static;
+	}
+	#g-template-medium .g-pstyle0 {
+		font-weight:500;
+		line-height:29px;
+		height:29px;
+		font-size:24px;
+	}
+	#g-template-medium .g-pstyle1 {
+		font-weight:500;
+		line-height:29px;
+		font-size:24px;
+	}
+	#g-template-medium .g-pstyle2 {
+		font-weight:500;
+		height:19px;
+	}
+	#g-template-medium .g-pstyle3 {
+		font-weight:500;
+		line-height:16px;
+		height:16px;
+	}
+	#g-template-medium .g-pstyle4 {
+		font-weight:500;
+		line-height:22px;
+		height:22px;
+	}
+	#g-template-medium .g-pstyle5 {
+		font-weight:500;
+		line-height:27px;
+		height:27px;
+		font-size:22px;
+	}
+	#g-template-medium .g-pstyle6 {
+		font-weight:500;
+		line-height:9px;
+		font-size:9px;
+	}
+	#g-template-mobile {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-template-mobile p {
+		font-weight:regular;
+		line-height:30px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:25px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		position:static;
+	}
+	#g-template-mobile .g-pstyle0 {
+		font-weight:500;
+		height:30px;
+	}
+	#g-template-mobile .g-pstyle1 {
+		font-weight:500;
+		line-height:29px;
+		font-size:24px;
+	}
+	#g-template-mobile .g-pstyle2 {
+		font-weight:500;
+		line-height:24px;
+		height:24px;
+		font-size:20px;
+	}
+	#g-template-mobile .g-pstyle3 {
+		font-weight:500;
+		line-height:29px;
+		height:29px;
+		font-size:24px;
+	}
+	#g-template-mobile .g-pstyle4 {
+		font-weight:500;
+		line-height:35px;
+		height:35px;
+		font-size:24px;
+	}
+	#g-template-mobile .g-pstyle5 {
+		font-weight:500;
+		line-height:27px;
+		height:27px;
+		font-size:24px;
+	}
+
+</style>
+
+<div id="g-template-box" class="ai2html ai2html-responsive">
+
+	<!-- Artboard: full -->
+	<div id="g-template-full" class="g-artboard" style="width:700px; height:425px;" data-aspect-ratio="1.647" data-min-width="700">
+<div style=""></div>
+		<img id="g-template-full-img" class="g-template-full-img g-aiImg" alt="" src="template-full.png"/>
+		<div id="g-ai0-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:8.7654%;margin-top:-15.3px;left:22.8479%;width:408px;">
+			<p class="g-pstyle0">The 10 Most-Loved Ice Cream Toppings</p>
+		</div>
+		<div id="g-ai0-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:17.4713%;margin-top:-15.3px;left:27.4446%;width:36px;">
+			<p class="g-pstyle0">2</p>
+		</div>
+		<div id="g-ai0-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:18.883%;margin-top:-15.3px;left:82.4599%;width:36px;">
+			<p class="g-pstyle0">5</p>
+		</div>
+		<div id="g-ai0-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:19.3536%;margin-top:-15.3px;left:43.6027%;width:36px;">
+			<p class="g-pstyle0">3</p>
+		</div>
+		<div id="g-ai0-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:19.3536%;margin-top:-15.3px;left:64.9306%;width:36px;">
+			<p class="g-pstyle0">4</p>
+		</div>
+		<div id="g-ai0-6" class="g-ai2html-settings g-aiAbs" style="top:16.7059%;left:6.8884%;width:3.5714%;">
+			<p class="g-pstyle1">1.</p>
+		</div>
+		<div id="g-ai0-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:31.4122%;margin-top:-30.5px;left:51.3719%;width:67px;">
+			<p class="g-pstyle2">Whipped </p>
+			<p class="g-pstyle3">Cream</p>
+		</div>
+		<div id="g-ai0-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:34.0005%;margin-top:-33.5px;left:71.3537%;width:75px;">
+			<p class="g-pstyle4">Cookies </p>
+			<p class="g-pstyle4">(whole or </p>
+			<p class="g-pstyle4">crushed)</p>
+		</div>
+		<div id="g-ai0-9" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:31.6711%;margin-top:-19.6px;left:89.0031%;width:63px;">
+			<p class="g-pstyle5">Brownie </p>
+			<p class="g-pstyle5">bits</p>
+		</div>
+		<div id="g-ai0-10" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:37.0519%;margin-top:-18.5px;left:13.7443%;width:58px;">
+			<p class="g-pstyle6">Hot </p>
+			<p class="g-pstyle6">Fudge</p>
+		</div>
+		<div id="g-ai0-11" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:36.9416%;margin-top:-10px;left:31.0427%;width:69px;">
+			<p class="g-pstyle5">Sprinkles</p>
+		</div>
+		<div id="g-ai0-12" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:49.4713%;margin-top:-15.3px;left:6.8474%;width:34px;">
+			<p class="g-pstyle0">6</p>
+		</div>
+		<div id="g-ai0-13" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:49.5097%;margin-top:-14.4px;left:26.8885%;width:36px;">
+			<p class="g-pstyle7">7</p>
+		</div>
+		<div id="g-ai0-14" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:50.4125%;margin-top:-15.3px;left:43.3997%;width:36px;">
+			<p class="g-pstyle0">8</p>
+		</div>
+		<div id="g-ai0-15" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:51.3536%;margin-top:-15.3px;left:59.6027%;width:36px;">
+			<p class="g-pstyle0">9</p>
+		</div>
+		<div id="g-ai0-16" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:51.3536%;margin-top:-15.3px;left:83.2284%;width:51px;">
+			<p class="g-pstyle0">10</p>
+		</div>
+		<div id="g-ai0-17" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:61.5299%;margin-top:-23.5px;left:13.6477%;width:58px;">
+			<p class="g-pstyle8">Caramel</p>
+			<p class="g-pstyle8">Sauce</p>
+		</div>
+		<div id="g-ai0-18" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:65.0828%;margin-top:-19.6px;left:33.0368%;width:48px;">
+			<p class="g-pstyle5">Fruit</p>
+		</div>
+		<div id="g-ai0-19" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:66.7298%;margin-top:-19.6px;left:51.362%;width:69px;">
+			<p class="g-pstyle5">Chocolate</p>
+			<p class="g-pstyle5">Sauce</p>
+		</div>
+		<div id="g-ai0-20" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:70.024%;margin-top:-19.6px;left:69.7814%;width:79px;">
+			<p class="g-pstyle5">Chocolate </p>
+			<p class="g-pstyle5">Chips</p>
+		</div>
+		<div id="g-ai0-21" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:72.377%;margin-top:-19.6px;left:90.2775%;width:48px;">
+			<p class="g-pstyle5">Gummy</p>
+			<p class="g-pstyle5">Bears</p>
+		</div>
+		<div id="g-ai0-22" class="g-ai2html-settings g-aiAbs" style="top:87.5294%;left:3.3301%;width:84.4286%;">
+			<p class="g-pstyle9">Created by Rosa Kettumäki with Adobe Illustrator Generate vectors </p>
+			<p class="g-pstyle9">Data:IDFA</p>
+		</div>
+	</div>
+
+	<!-- Artboard: medium -->
+	<div id="g-template-medium" class="g-artboard" style="width:490px; height:350px;" data-aspect-ratio="1.4" data-min-width="490" data-max-width="699">
+<div style=""></div>
+		<img id="g-template-medium-img" class="g-template-medium-img g-aiImg" alt="" src="template-medium.png"/>
+		<div id="g-ai1-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:7.2151%;margin-top:-15.3px;left:9.3325%;width:408px;">
+			<p class="g-pstyle0">The 10 Most-Loved Ice Cream Toppings</p>
+		</div>
+		<div id="g-ai1-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:20.0723%;margin-top:-15.3px;left:53.5792%;width:36px;">
+			<p class="g-pstyle0">3</p>
+		</div>
+		<div id="g-ai1-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:20.0723%;margin-top:-15.3px;left:77.1088%;width:36px;">
+			<p class="g-pstyle0">4</p>
+		</div>
+		<div id="g-ai1-4" class="g-ai2html-settings g-aiAbs" style="top:16.8571%;left:3.9873%;width:5.102%;">
+			<p class="g-pstyle1">1.</p>
+		</div>
+		<div id="g-ai1-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:20.6437%;margin-top:-15.3px;left:32.3328%;width:36px;">
+			<p class="g-pstyle0">2</p>
+		</div>
+		<div id="g-ai1-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:29.8863%;margin-top:-19.6px;left:4.5978%;width:66px;">
+			<p class="g-pstyle2">Hot </p>
+			<p class="g-pstyle2">Fudge</p>
+		</div>
+		<div id="g-ai1-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:30.572%;margin-top:-10px;left:26.0443%;width:69px;">
+			<p class="g-pstyle2">Sprinkles</p>
+		</div>
+		<div id="g-ai1-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:33.572%;margin-top:-16.5px;left:51.1191%;width:67px;">
+			<p class="g-pstyle3">Whipped </p>
+			<p class="g-pstyle3">Cream</p>
+		</div>
+		<div id="g-ai1-9" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:37.0006%;margin-top:-22.5px;left:73.8355%;width:118px;">
+			<p class="g-pstyle4">Cookies </p>
+			<p class="g-pstyle4">(whole or crushed)</p>
+		</div>
+		<div id="g-ai1-10" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:43.7866%;margin-top:-15.3px;left:32.9082%;width:34px;">
+			<p class="g-pstyle0">6</p>
+		</div>
+		<div id="g-ai1-11" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:44.4046%;margin-top:-14.4px;left:53.9874%;width:36px;">
+			<p class="g-pstyle5">7</p>
+		</div>
+		<div id="g-ai1-12" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:45.7866%;margin-top:-15.3px;left:5.0078%;width:36px;">
+			<p class="g-pstyle0">5</p>
+		</div>
+		<div id="g-ai1-13" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:51.7866%;margin-top:-15.3px;left:75.9423%;width:36px;">
+			<p class="g-pstyle0">8</p>
+		</div>
+		<div id="g-ai1-14" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:56.4577%;margin-top:-19.6px;left:29.3579%;width:56px;">
+			<p class="g-pstyle2">Caramel</p>
+			<p class="g-pstyle2">Sauce</p>
+		</div>
+		<div id="g-ai1-15" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:58.65%;margin-top:-25.3px;left:52.3625%;width:48px;">
+			<p class="g-pstyle2">Fruit</p>
+		</div>
+		<div id="g-ai1-16" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:57.6006%;margin-top:-19.6px;left:3.1633%;width:67px;">
+			<p class="g-pstyle2">Brownie </p>
+			<p class="g-pstyle2">bits</p>
+		</div>
+		<div id="g-ai1-17" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:63.0292%;margin-top:-19.6px;left:73.0313%;width:63px;">
+			<p class="g-pstyle2">Chocolate</p>
+			<p class="g-pstyle2">Sauce</p>
+		</div>
+		<div id="g-ai1-18" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:70.0723%;margin-top:-15.3px;left:35.0853%;width:51px;">
+			<p class="g-pstyle0">10</p>
+		</div>
+		<div id="g-ai1-19" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:70.6437%;margin-top:-15.3px;left:5.6198%;width:36px;">
+			<p class="g-pstyle0">9</p>
+		</div>
+		<div id="g-ai1-20" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:80.7434%;margin-top:-19.6px;left:8.3243%;width:69px;">
+			<p class="g-pstyle2">Chocolate </p>
+			<p class="g-pstyle2">Chips</p>
+		</div>
+		<div id="g-ai1-21" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:82.4577%;margin-top:-19.6px;left:36.3797%;width:48px;">
+			<p class="g-pstyle2">Gummy</p>
+			<p class="g-pstyle2">Bears</p>
+		</div>
+		<div id="g-ai1-22" class="g-ai2html-settings g-aiAbs" style="top:79.4286%;left:58.6999%;width:46.9388%;">
+			<p class="g-pstyle6">Created by Rosa Kettumäki </p>
+			<p class="g-pstyle6">with Adobe Illustrator Generate vectors </p>
+			<p class="g-pstyle6">Data:</p>
+			<p class="g-pstyle6">IDFA</p>
+		</div>
+	</div>
+
+	<!-- Artboard: mobile -->
+	<div id="g-template-mobile" class="g-artboard" style="max-width: 375px;max-height: 471px" data-aspect-ratio="0.797" data-min-width="0" data-max-width="489">
+<div style="padding: 0 0 125.5467% 0;"></div>
+		<img id="g-template-mobile-img" class="g-template-mobile-img g-aiImg" alt="" src="template-mobile.png"/>
+		<div id="g-ai2-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:8.8305%;margin-top:-15.6px;left:5.4432%;width:361px;">
+			<p class="g-pstyle0">The 10 Most-Loved Ice Cream Toppings</p>
+		</div>
+		<div id="g-ai2-2" class="g-ai2html-settings g-aiAbs" style="top:18.2668%;left:12.2008%;width:6.6667%;">
+			<p class="g-pstyle1">1.</p>
+		</div>
+		<div id="g-ai2-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:23.4978%;margin-top:-24.6px;left:47.3984%;width:71px;">
+			<p class="g-pstyle2">Hot </p>
+			<p class="g-pstyle2">Fudge</p>
+		</div>
+		<div id="g-ai2-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:34.6756%;margin-top:-15.3px;left:12.7057%;width:36px;">
+			<p class="g-pstyle3">2</p>
+		</div>
+		<div id="g-ai2-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:36.1625%;margin-top:-15.3px;left:46.8888%;width:92px;">
+			<p class="g-pstyle3">Sprinkles</p>
+		</div>
+		<div id="g-ai2-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:51.0308%;margin-top:-15.3px;left:13.0008%;width:36px;">
+			<p class="g-pstyle3">3</p>
+		</div>
+		<div id="g-ai2-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:56.8446%;margin-top:-35.6px;left:47.2367%;width:89px;">
+			<p class="g-pstyle4">Whipped </p>
+			<p class="g-pstyle4">Cream</p>
+		</div>
+		<div id="g-ai2-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:64.4123%;margin-top:-15.3px;left:13.6128%;width:36px;">
+			<p class="g-pstyle3">4</p>
+		</div>
+		<div id="g-ai2-9" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:74.0767%;margin-top:-27.8px;left:46.4026%;width:165px;">
+			<p class="g-pstyle5">Cookies </p>
+			<p class="g-pstyle5">(whole or crushed)</p>
+		</div>
+		<div id="g-ai2-10" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:82.4666%;margin-top:-15.3px;left:13.5341%;width:36px;">
+			<p class="g-pstyle3">5</p>
+		</div>
+		<div id="g-ai2-11" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:92.3222%;margin-top:-29.7px;left:46.5482%;width:84px;">
+			<p class="g-pstyle3">Brownie </p>
+			<p class="g-pstyle3">bits</p>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	(function (containerId, opts) {
+		var nameSpace = opts.namespace || '';
+		var containers = findContainers(containerId);
+		containers.forEach(resize);
+
+		function resize(container) {
+			var onResize = throttle(update, 200);
+			var waiting = !!window.IntersectionObserver;
+			var observer;
+			update();
+
+			document.addEventListener('DOMContentLoaded', update);
+			window.addEventListener('resize', onResize);
+
+			// NYT Scoop-specific code
+			if (opts.setup) {
+				opts.setup(container).on('cleanup', cleanup);
+			}
+
+			function cleanup() {
+				document.removeEventListener('DOMContentLoaded', update);
+				window.removeEventListener('resize', onResize);
+				if (observer) observer.disconnect();
+			}
+
+			function update() {
+				var artboards = selectChildren('.' + nameSpace + 'artboard[data-min-width]', container),
+						width = Math.round(container.getBoundingClientRect().width);
+
+				// Set artboard visibility based on container width
+				artboards.forEach(function(el) {
+					var minwidth = el.getAttribute('data-min-width'),
+							maxwidth = el.getAttribute('data-max-width');
+					if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+						if (!waiting) {
+							selectChildren('.' + nameSpace + 'aiImg', el).forEach(updateImgSrc);
+							selectChildren('video', el).forEach(updateVideoSrc);
+						}
+						el.style.display = 'block';
+					} else {
+						el.style.display = 'none';
+					}
+				});
+
+				// Initialize lazy loading on first call
+				if (waiting && !observer) {
+					if (elementInView(container)) {
+						waiting = false;
+						update();
+					} else {
+						observer = new IntersectionObserver(onIntersectionChange, {rootMargin: "800px"});
+						observer.observe(container);
+					}
+				}
+			}
+
+			function onIntersectionChange(entries) {
+				// There may be multiple entries relating to the same container
+				// (captured at different times)
+				var isIntersecting = entries.reduce(function(memo, entry) {
+					return memo || entry.isIntersecting;
+				}, false);
+				if (isIntersecting) {
+					waiting = false;
+					// update: don't remove -- we need the observer to trigger an update
+					// when a hidden map becomes visible after user interaction
+					// (e.g. when an accordion menu or tab opens)
+					// observer.disconnect();
+					// observer = null;
+					update();
+				}
+			}
+		}
+
+		function findContainers(id) {
+			// support duplicate ids on the page
+			return selectChildren('.ai2html-responsive', document).filter(function(el) {
+				if (el.getAttribute('id') != id) return false;
+				if (el.classList.contains('ai2html-resizer')) return false;
+				el.classList.add('ai2html-resizer');
+				return true;
+			});
+		}
+
+		// Replace blank placeholder image with actual image
+		function updateImgSrc(img) {
+			var src = img.getAttribute('data-src');
+			if (src && img.getAttribute('src') != src) {
+				img.setAttribute('src', src);
+			}
+		}
+
+		function updateVideoSrc(el) {
+			var src = el.getAttribute('data-src');
+			if (src && !el.hasAttribute('src')) {
+				el.setAttribute('src', src);
+			}
+		}
+
+		function elementInView(el) {
+			var bounds = el.getBoundingClientRect();
+			return bounds.top < window.innerHeight && bounds.bottom > 0;
+		}
+
+		function selectChildren(selector, parent) {
+			return parent ? Array.prototype.slice.call(parent.querySelectorAll(selector)) : [];
+		}
+
+		// based on underscore.js
+		function throttle(func, wait) {
+			var timeout = null, previous = 0;
+			function run() {
+					previous = Date.now();
+					timeout = null;
+					func();
+			}
+			return function() {
+				var remaining = wait - (Date.now() - previous);
+				if (remaining <= 0 || remaining > wait) {
+					clearTimeout(timeout);
+					run();
+				} else if (!timeout) {
+					timeout = setTimeout(run, remaining);
+				}
+			};
+		}
+	})("g-template-box", {namespace: "g-", setup: window.setupInteractive || window.getComponent});
+</script>
+<!-- End ai2html - 2025-05-16 18:16 -->
+
+
+<div class="content">
+
+
+	<p>Since Amethyst Martinez's favorite flavor was not available in Forzen Love today, they had to go to an other direction.</p>
+  
+	<div class="vertical-video">
+        <iframe 
+          src="https://www.youtube.com/embed/urnwz1Pu9N8" 
+          title="Vertical YouTube video" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+
+	  </div>
+
+	  <div class="content">
+
+		<p></p>
+
+		<p> But why is ice cream so popular in the United States?
+			Amethyst has a clear answer.</p> 
+		
+
+		<p></p>
+
+	
+	<div class="vertical-video">
+			<iframe 
+			  src="https://www.youtube.com/embed/55B3J2EI0PI" 
+			  title="Vertical YouTube video" 
+			  frameborder="0" 
+			  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+			  allowfullscreen>
+			</iframe>
+	
+		  </div>
+
+		  <p></p>
+		  <p>In the end, America’s love affair with ice cream isn’t just about dessert—it’s about nostalgia, abundance, and joy. </p>
+		  <p>From towering sundaes to SpongeBob-shaped popsicles, the choices are endless, the toppings outrageous, and the cones (mostly waffle) a matter of national preference.</p>
+		
+    <figure>
+      <img
+        src="ametyhts-portrait.jpg">
+      <figcaption>"I'll give it nine out of ten" Amethyst rates the mango gelato with mago toppings.</figcaption>
+    </figure>
+  
+  <div class="info-box">
+	<h4>About this story</h4>
+   
+		  <p>This article was created for educational purposes—and out of genuine love for ice cream. </p>
+		  <p>All data is from the International Dairy Food Organisation <a href="https://www.idfa.org/resources/ice-cream-frozen-novelty-trends-survey-may-2024">IDFA</a> and  
+			<a href="https://www.statista.com/outlook/cmo/food/confectionery-snacks/confectionery/ice-cream/worldwide.">Statista</a> 
+			
+			 </p>
+  		  <p>Analysis, interviews, text, data visualizations, videos, and website by Rosa Kettumäki.</p>
+
+		  </div>
+
+  <div class="footer">
+    <div class="content">
+      <p>If you are interested to see more details of my process visit my <a href="https://www.idfa.org/resources/ice-cream-frozen-novelty-trends-survey-may-2024">GitHub</a>. </p>
+    </div>
+  </div>
+
+  <script>
+    /*************
+    
+    This is the JavaScript that makes the scrolly work 
+    
+    *************/
+
+    /* 
+    This part attaches a scroll to the element with id="scrolly-images"    
+    */
+    (() => {
+      const scroller = scrollama()
+
+      scroller
+        .setup({
+          parent: document.querySelector("#scrolly-images"),
+          step: ".step",
+          offset: 0.6,
+          debug: false,
+        })
+        .onStepEnter(function ({ element, index, direction }) {
+          const event = new CustomEvent("stepin", { detail: { direction: direction } })
+          element.dispatchEvent(event)
+        })
+        .onStepExit(function ({ element, index, direction }) {
+          const event = new CustomEvent("stepout", { detail: { direction: direction } })
+          if (direction === "up" && element.previousElementSibling) {
+            const event = new CustomEvent("stepin", { detail: { direction: direction } })
+            element.previousElementSibling.dispatchEvent(event)
+          }
+        })
+
+      window.addEventListener("resize", scroller.resize)
+    })()
+
+    /*
+    This part sets up your actions. In this case, it's changing the image in the scrolly container.
+    */
+    d3.select("#step1").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "frozen-love.jpg")
+    })
+
+    d3.select("#step2").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "frozen-love-ice-cream.jpg")
+    })
+
+    d3.select("#step3").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "frozen-love-ice-cream.jpg")
+    })
+
+    d3.select("#step4").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "frozen-love-sweet-toppings.jpg")
+    })
+
+    d3.select("#step5").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "frozen-love-salty-toppings.jpg")
+    })
+  </script>
+  <style>
+    /* Change this to adjust the padding between steps */
+    .step {
+      margin-bottom: 70vh;
+    }
+  </style>
+
+
+
+  
+  
+  
+  </div>
+	</div>
+
+</body>
+
+</html>
