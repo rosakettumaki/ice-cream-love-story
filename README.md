@@ -4,7 +4,7 @@ A Scrollytelling Exploration of Ice Cream Culture in the U.S.
 
 **Goals**
 
-This project was my first attempt at combining data visualizations, text, and video into a cohesive scrollytelling experience. My main goal was to experiment with:
+This project was my first attempt at combining data visualizations, text, and also video into a cohesive scrollytelling experience. My main goal was to experiment with:
 
 Adobe Illustrator as a visualization tool
 Getting AI2HTML to work for responsive chart integration
@@ -26,8 +26,7 @@ Hosting: YouTube (for video integration)
 I sourced data from the International Dairy Foods Association (IDFA) and Statista. Though the data came as PDFs, I converted them into CSV format using ChatGPT and manually verified them for accuracy. (Surprisingly, the AI got everything right.)
 
 ***Data Cleaning***
-Light cleaning and reorganization were done in Numbers for speed and ease of use.
-
+Light cleaning and reorganization were done in Numbers.
 ***Visualization***
 The flavor chart was made with Datawrapper.
 The toppings visualization was created entirely in Illustrator, with AI-generated ice cream icons based on my own prompts.
@@ -51,7 +50,7 @@ I experimented with building a multi-format narrative—and now better understan
 
 This project is still a draft that shows where I’m heading with my storytelling. Here’s what I would improve in the next iteration:
 
-Refine webpage styling: improve fonts, colors, image scaling, and overall layout polish.
+Refine webpage styling: improve fonts, colors, image scaling, and overall layout polish. I'd love to learn how to use videos as backgrouds of scrolly. I tried this, but it was too complicated to get videos look nice and be small enough to be hosted on GitHub.
 Unify graphic style: recreate both charts in Illustrator for a consistent visual identity.
 Improve video aesthetics: integrate them more naturally into the scroll experience, rather than as standalone YouTube embeds.
 Enhance the narrative structure: better align visuals, video, and text to work in concert—deciding which medium is best for each piece of information.
